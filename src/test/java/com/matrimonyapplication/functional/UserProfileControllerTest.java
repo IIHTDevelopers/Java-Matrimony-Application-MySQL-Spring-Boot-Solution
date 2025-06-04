@@ -123,7 +123,7 @@ public class UserProfileControllerTest {
 		List<UserProfileDTO> userProfileDTOList = getUserProfileDTOList();
 
 		when(this.userProfileService.searchProfilesBySex(sex)).thenReturn(userProfileDTOList);
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/profiles/search/sex/" + sex)
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/profiles/sex/" + sex)
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
@@ -139,7 +139,7 @@ public class UserProfileControllerTest {
 		List<UserProfileDTO> userProfileDTOList = getUserProfileDTOList();
 
 		when(this.userProfileService.searchProfilesByLikesContaining(likesKeyword)).thenReturn(userProfileDTOList);
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/profiles/search/likes/" + likesKeyword)
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/profiles/likes/" + likesKeyword)
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
