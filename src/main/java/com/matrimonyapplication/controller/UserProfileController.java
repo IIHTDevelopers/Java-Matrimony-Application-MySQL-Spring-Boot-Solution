@@ -65,13 +65,13 @@ public class UserProfileController {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
-	@GetMapping("/search/sex/{sex}")
+	@GetMapping("/sex/{sex}")
 	public ResponseEntity<List<UserProfileDTO>> searchProfilesBySex(@PathVariable String sex) {
 		List<UserProfileDTO> userProfiles = userProfileService.searchProfilesBySex(sex);
 		return new ResponseEntity<>(userProfiles, HttpStatus.OK);
 	}
 
-	@GetMapping("/search/likes/{likesKeyword}")
+	@GetMapping("/likes/{likesKeyword}")
 	public ResponseEntity<List<UserProfileDTO>> searchProfilesByLikesContaining(@PathVariable String likesKeyword) {
 		List<UserProfileDTO> userProfiles = userProfileService.searchProfilesByLikesContaining(likesKeyword);
 		return new ResponseEntity<>(userProfiles, HttpStatus.OK);
